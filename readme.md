@@ -38,6 +38,7 @@ ssh ec2-user@PUBLIC_IP -i challenge
 
 ## Improvements to make to the proposed infrastructure
 
+* Add Terraform Backends: State Storage and Locking
 * Create a Custom VPC with 3 layer pattern (public, private, db)
 * Move EC2 instance to private subnets
 * Remove public IP from instances
