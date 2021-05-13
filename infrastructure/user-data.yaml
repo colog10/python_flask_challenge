@@ -1,0 +1,8 @@
+#cloud-config
+ssh_authorized_keys:
+  - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDFITE+4fch9VDkTYE/VZrKHDEQ86gYm8t3Ltj4K7fr/kBhQZrJ1oM+Ygb2wam2VDccxUMept+a9++XJiZhi5KwziZCFjaLZ0HN2ErqLqtgs0ehuzwEzKjab0EfrnxdB49XXBEhQiJCuwTrcf6KSRBtD06xKYpszugBv+nuKBIKwyvAv7O4IAXtxFgGKt5ctwxCIPTJp2nBEv1J9H4vhZ9+4dB/B5ElQRR4oUQBUAn1GeirB7oXOiCQmQTKCfIce1GbJHPSFTISIctiyoSVO1VWWGv5nrwyU0hvNM0FkuzcdkDSBw9LA85NTgXJbhCt2R7xjHMmuZtX80OAbdSGU9vM1eqHiNH9AnC49lIbODce+VJIMkRrF6VP/72qo/IcO8ua0T4P59fYkfLt0wlMcXkkIDYw2B3CS90WLGXge+9GbVmVpB8/21d/MPW42Y9Uudm2QCy/nI2jmS9y8VIYuWgL34REJIow4Iy4AbRBeY12uL6Uu/HAHhwAZ0efGBjjKDvVqmi5a8u76wOFXghXdZL7oW3rhpCo4RdmMarHKwq+I8F4fGSoTxg0QoRSmdZvfvcFi5e0MuAkrcO6Zu3opU4a16cGTQ7ujvptANvfYtjNsTk4QUffh49Zc/YfUb1efMgYU57mQb+QuRzhLl3XedzEAz4JGbRvbJ3eet2xMYFF+w=="
+
+bootcmd:
+  - mkdir -p /etc/ecs
+  - echo 'ECS_CLUSTER=${cluster_name}' >> /etc/ecs/ecs.config
+  - echo 'ECS_ENABLE_CONTAINER_METADATA=true' >> /etc/ecs/ecs.config
